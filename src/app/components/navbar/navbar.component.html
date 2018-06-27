@@ -6,7 +6,7 @@
         <img class="logo-img-tlv" src="/assets/img/tlv-logo-small-white.jpg"/>
 
       </a>
-      <div class="msw-page-title-dropdown dropdown">
+      <div *ngIf="currentUser" class="msw-page-title-dropdown dropdown">
         <a class="" href="http://example.com" id="navbarDropdownMenuLink0" data-toggle="dropdown"
            aria-haspopup="true" aria-expanded="false">
             <span class="msw-page-title">
@@ -15,7 +15,7 @@
             </span>
           <!--<span class="notification">5</span>-->
         </a>
-        <div class="dropdown-menu dropdown-menu-link" aria-labelledby="navbarDropdownMenuLink">
+        <div *ngIf="currentUser" class="dropdown-menu dropdown-menu-link" aria-labelledby="navbarDropdownMenuLink">
             <div routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}} nav-item"  data-test-id="header-nav-links">
               <a class="dropdown-item" [routerLink]="[menuItem.path]">
                 {{menuItem.title}}
